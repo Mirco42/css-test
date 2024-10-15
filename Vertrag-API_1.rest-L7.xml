@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<l7:layer7-config xmlns:l7="http://l7.security.css.ch/config" xmlns:env="http://l7.security.css.ch/environment" xmlns:pep="http://l7.security.css.ch/pep"
+   xmlns:srv="http://l7.security.css.ch/service" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://l7.security.css.ch/config layer7-config.xsd">
+   <env:environment name="dev">
+      <env:cell>test</env:cell>
+      <env:mandant>integration</env:mandant>
+   </env:environment>
+   <srv:restService name="Vertrag-API" version="1" releaseUnit="eb-es-frv-srv-web" serviceGroup="Layer7-Deploy-Tool">
+      <srv:audit>
+         <srv:saveRequest>true </srv:saveRequest>
+         <srv:saveResponse>true </srv:saveResponse>
+         <srv:fullFaultDetails>false</srv:fullFaultDetails>
+      </srv:audit>
+      <srv:proxy passthroughHttpAuthentication="false" readTimeout="60000">
+         <srv:publications>
+            <srv:publication>
+               <srv:publishedPath>/sample/anzu/v1/vertrag/police/frv</srv:publishedPath>
+               <srv:backendPath>/eb-es-frv-srv-web${request.http.uri}</srv:backendPath>
+            </srv:publication>
+         </srv:publications>
+         <srv:currentSecurityHeaderHandling>3</srv:currentSecurityHeaderHandling>
+         <srv:backendHosts>
+            <srv:backendHost>ced35.css.ch</srv:backendHost>
+         </srv:backendHosts>
+      </srv:proxy>
+      <srv:access>
+         <srv:network>admin</srv:network>
+         <srv:network>waf</srv:network>
+      </srv:access>
+      <srv:protection>
+         <srv:requestSize limit="4098" />
+      </srv:protection>
+      <srv:resources>
+         <srv:resource name="POLICE-FRV" match="^/sample/anzu/v1/vertrag/police/frv$">
+            <srv:validation>
+               <srv:inbound id="vertrag-schema-in" file="vertrag-schema-in.json" />
+               <srv:outbound id="vertrag-schema-out" file="vertrag-schema-out.json" />
+            </srv:validation>
+            <srv:authentication>NONE</srv:authentication>
+            <srv:http-methods>
+               <srv:http-method>POST</srv:http-method>
+            </srv:http-methods>
+         </srv:resource>
+      </srv:resources>
+   </srv:restService>
+</l7:layer7-config>

@@ -1,0 +1,186 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "/",
+  "type": "object",
+  "properties": {
+    "person": {
+      "id": "person",
+      "type": "object",
+      "properties": {
+        "anrede": {
+          "id": "anrede",
+          "type": "string"
+        },
+        "name": {
+          "id": "name",
+          "type": "string"
+        },
+        "vorname": {
+          "id": "vorname",
+          "type": "string"
+        },
+        "strasse": {
+          "id": "strasse",
+          "type": "string"
+        },
+        "nummer": {
+          "id": "nummer",
+          "type": "string"
+        },
+        "zip": {
+          "id": "zip",
+          "type": "string"
+        },
+        "ort": {
+          "id": "ort",
+          "type": "string"
+        },
+        "telefon": {
+          "id": "telefon",
+          "type": "string"
+        },
+        "email": {
+          "id": "email",
+          "type": "string"
+        }
+      }
+    },
+    "oapPartFrv": {
+      "id": "oapPartFrv",
+      "type": "object",
+      "properties": {
+        "valuta": {
+          "id": "valuta",
+          "type": "string"
+        },
+        "tarifTypFRV": {
+          "id": "tarifTypFRV",
+          "type": "string"
+        },
+        "vertragsdauerTyp": {
+          "id": "vertragsdauerTyp",
+          "type": "string"
+        },
+        "dokumentenPraemie": {
+          "id": "dokumentenPraemie",
+          "type": "number"
+        },
+        "verkaufsproduktFrvInstance": {
+          "id": "verkaufsproduktFrvInstance",
+          "type": "array",
+          "items": {
+            "id": "0",
+            "type": "object",
+            "properties": {
+              "bezeichnungsText": {
+                "id": "bezeichnungsText",
+                "type": "string"
+              },
+              "ausgewaehlt": {
+                "id": "ausgewaehlt",
+                "type": "boolean"
+              },
+              "auswaehlbar": {
+                "id": "auswaehlbar",
+                "type": "boolean"
+              },
+              "sortierung": {
+                "id": "sortierung",
+                "type": "number"
+              },
+              "bruttoPraemie": {
+                "id": "bruttoPraemie",
+                "type": "number"
+              },
+              "dokumentenPraemieProdukt": {
+                "id": "dokumentenPraemieProdukt",
+                "type": "number"
+              },
+              "fachlSchluessel": {
+                "id": "fachlSchluessel",
+                "type": "number"
+              },
+              "isPaket": {
+                "id": "isPaket",
+                "type": "boolean"
+              },
+              "produktFrvInstances": {
+                "id": "produktFrvInstances",
+                "type": "array",
+                "items": {
+                  "id": "0",
+                  "type": "object",
+                  "properties": {
+                    "bezeichnungsText": {
+                      "id": "bezeichnungsText",
+                      "type": "string"
+                    },
+                    "sortierung": {
+                      "id": "sortierung",
+                      "type": "number"
+                    },
+                    "bruttoPraemie": {
+                      "id": "bruttoPraemie",
+                      "type": "number"
+                    },
+                    "dokumentenPraemieProdukt": {
+                      "id": "dokumentenPraemieProdukt",
+                      "type": "number"
+                    },
+                    "fachlSchluessel": {
+                      "id": "fachlSchluessel",
+                      "type": "number"
+                    },
+                    "produktFrvInstances": {
+                      "id": "produktFrvInstances",
+                      "type": "array",
+                      "items": {
+                        "id": "0",
+                        "type": "object",
+                        "properties": {
+                          "bezeichnungsText": {
+                            "id": "bezeichnungsText",
+                            "type": "string"
+                          },
+                          "sortierung": {
+                            "id": "sortierung",
+                            "type": "number"
+                          },
+                          "bruttoPraemie": {
+                            "id": "bruttoPraemie",
+                            "type": "number"
+                          },
+                          "dokumentenPraemieProdukt": {
+                            "id": "dokumentenPraemieProdukt",
+                            "type": "number"
+                          },
+                          "fachlSchluessel": {
+                            "id": "fachlSchluessel",
+                            "type": "number"
+                          },
+                          "infoText": {
+                            "id": "infoText",
+                            "type": "string"
+                          },
+                          "versicherungsSumme": {
+                            "id": "versicherungsSumme",
+                            "type": "number"
+                          },
+                          "produktFrvInstances": {
+                            "id": "produktFrvInstances",
+                            "type": "array",
+                            "items": []
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
