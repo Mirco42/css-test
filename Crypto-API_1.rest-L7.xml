@@ -28,11 +28,6 @@
          </srv:backendHosts>
       </srv:proxy>
 
-      <srv:access>
-         <srv:network>admin</srv:network>
-         <srv:network>waf</srv:network>
-      </srv:access>
-
       <srv:protection>
          <srv:requestSize limit="4098" />
       </srv:protection>
