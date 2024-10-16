@@ -23,6 +23,8 @@
             <srv:backendHost>ced35.css.ch</srv:backendHost>
          </srv:backendHosts>
       </srv:proxy>
+      <srv:access>
+      </srv:access>
       <srv:protection>
          <srv:requestSize limit="4098" />
       </srv:protection>
